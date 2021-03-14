@@ -10,7 +10,7 @@ const App: React.FC = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+ /* useEffect(() => {
     const unSub = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         dispatch(
@@ -27,17 +27,11 @@ const App: React.FC = () => {
     return () => {
       unSub();
     };
-  }, [dispatch]);
+  }, [dispatch]);*/
   return (
-    <>
-      {user.uid ? (
-        <div className={styles.app}>
-          <Feed />
-        </div>
-      ) : (
+
         <Auth />
-      )}
-    </>
+
   );
 };
 
